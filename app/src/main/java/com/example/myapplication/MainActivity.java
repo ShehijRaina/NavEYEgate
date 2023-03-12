@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
@@ -15,6 +16,7 @@ import com.journeyapps.barcodescanner.ScanOptions;
 public class MainActivity extends AppCompatActivity {
 
     Button btn_scan;
+    ImageButton pause;
     MediaPlayer player;
 
     @Override
@@ -25,12 +27,16 @@ public class MainActivity extends AppCompatActivity {
         btn_scan.setOnClickListener(view -> {
             scan_code();
         });
+        pause = findViewById(R.id.pause);
+        pause.setOnClickListener(view -> {
+            pause_1W_Level_2();
+        });
     }
 
     private void scan_code() {
         ScanOptions options = new ScanOptions();
         options.setPrompt("Volume Up to switch on flash");
-        options.setBeepEnabled(true);
+        //options.setBeepEnabled(true);
         options.setOrientationLocked(true);
         options.setCaptureActivity(CaptureAct.class);
         barLauncher.launch(options);
@@ -45,13 +51,9 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     dialogInterface.dismiss();
-                }
-            }).show();
-            if(result.getContents() != null){
-                if (result.getContents() == "1W_Level_2"){
                     play_1W_Level_2();
                 }
-            }
+            }).show();
         }
     });
 
@@ -60,6 +62,13 @@ public class MainActivity extends AppCompatActivity {
             player = MediaPlayer.create(this, R.raw.audio);
         }
         player.start();
+    }
+
+    private void pause_1W_Level_2() {
+        if(player == null){
+            player = MediaPlayer.create(this, R.raw.audio);
+        }
+        player.pause();
     }
 
 
