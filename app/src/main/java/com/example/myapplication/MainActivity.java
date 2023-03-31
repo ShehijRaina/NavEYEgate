@@ -46,12 +46,15 @@ public class MainActivity extends AppCompatActivity {
         if(result.getContents()!= null){
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
             builder.setTitle("Result");
-            builder.setMessage(result.getContents());
+            String contents = result.getContents();
+            builder.setMessage(contents);
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     dialogInterface.dismiss();
-                    play_1W_Level_2();
+                    if (contents.equals("1W Level 2")) {
+                        play_1W_Level_2();
+                    }
                 }
             }).show();
         }
