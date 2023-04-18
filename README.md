@@ -1,5 +1,5 @@
 # NavEYEgate
-### Accesibility Track Winner - WiT Hackathon
+### Accessibility Track Winner - WiT Hackathon
 
 Our team's submission to the University of Bath WiT Hackathon 2023.
 
