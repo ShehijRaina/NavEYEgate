@@ -1,6 +1,7 @@
-# NavEYEgate
-### Accessibility Track Winner - WiT Hackathon
+# NavEYEgate👁️
 
-Our team's submission to the University of Bath WiT Hackathon 2023.
+### Winner of 'Accessibility' track
 
-Find out more about our project on Devpost - https://devpost.com/software/naveyegate-spc0q3
+Our team's submission for the University of Bath [Wackathon 2023](https://bath-wack-2023.devpost.com).
+
+Find out more on [Devpost](https://devpost.com/software/naveyegate-spc0q3).
